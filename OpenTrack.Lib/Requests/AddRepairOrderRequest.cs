@@ -47,7 +47,18 @@ namespace OpenTrack.Requests
 
         public String RepairOrderNumber { get; set; }
 
-        public String VIN { get; set; }
+        private string _vin;
+        public String VIN
+        {
+            get
+            {
+                return (this._vin ?? "").Trim().ToUpper();
+            }
+            set
+            {
+                this._vin = (value ?? "").Trim().ToUpper();
+            }
+        }
 
         public String CustomerNumber { get; set; }
 
@@ -84,10 +95,22 @@ namespace OpenTrack.Requests
 
     public class RepairOrder
     {
+        private string _vin;
+
         /// <summary>
         /// The VIN to be decoded
         /// </summary>
-        public String VIN { get; set; }
+        public String VIN
+        {
+            get
+            {
+                return (this._vin ?? "").Trim().ToUpper();
+            }
+            set
+            {
+                this._vin = (value ?? "").Trim().ToUpper();
+            }
+        }
 
         /// <summary>
         /// The odometer value before the RO

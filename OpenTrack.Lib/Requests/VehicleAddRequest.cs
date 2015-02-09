@@ -32,7 +32,18 @@ namespace OpenTrack.Requests
     {
         public string CompanyNumber { get; set; }
 
-        public string VIN { get; set; }
+        private string _vin;
+        public string VIN
+        {
+            get
+            {
+                return (this._vin ?? "").Trim().ToUpper();
+            }
+            set
+            {
+                this._vin = (value ?? "").Trim().ToUpper();
+            }
+        }
 
         public string StockNumber { get; set; }
 

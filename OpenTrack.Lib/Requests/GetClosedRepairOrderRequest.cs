@@ -21,7 +21,18 @@ namespace OpenTrack.Requests
 
         public String RepairOrderNumber { get; set; }
 
-        public String VIN { get; set; }
+        private string _vin;
+        public String VIN
+        {
+            get
+            {
+                return (this._vin ?? "").Trim().ToUpper();
+            }
+            set
+            {
+                this._vin = (value ?? "").Trim().ToUpper();
+            }
+        }
 
         public String CustomerNumber { get; set; }
 

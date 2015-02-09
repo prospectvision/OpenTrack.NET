@@ -1291,10 +1291,10 @@ namespace OpenTrack.ServiceAPI {
         [System.Xml.Serialization.XmlElementAttribute(Order=19)]
         public string VIN {
             get {
-                return this.vINField;
+                return (this.vINField ?? "").Trim().ToUpper();
             }
             set {
-                this.vINField = value;
+                this.vINField = (value ?? "").Trim().ToUpper();
                 this.RaisePropertyChanged("VIN");
             }
         }
@@ -3218,10 +3218,10 @@ namespace OpenTrack.ServiceAPI {
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public string VIN {
             get {
-                return this.vINField;
+                return (this.vINField ?? "").Trim().ToUpper();
             }
             set {
-                this.vINField = value;
+                this.vINField = (value ?? "").Trim().ToUpper();
                 this.RaisePropertyChanged("VIN");
             }
         }

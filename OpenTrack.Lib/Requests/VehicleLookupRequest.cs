@@ -20,7 +20,18 @@ namespace OpenTrack.Requests
         {
         }
 
-        public String VIN { get; set; }
+        private string _vin;
+        public String VIN
+        {
+            get
+            {
+                return (this._vin ?? "").Trim().ToUpper();
+            }
+            set
+            {
+                this._vin = (value ?? "").Trim().ToUpper();
+            }
+        }
 
         public String StockNumber { get; set; }
 

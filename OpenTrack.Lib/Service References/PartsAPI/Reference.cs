@@ -598,10 +598,10 @@ namespace OpenTrack.PartsAPI {
         [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string VIN {
             get {
-                return this.vINField;
+                return (this.vINField ?? "").Trim().ToUpper();
             }
             set {
-                this.vINField = value;
+                this.vINField = (value ?? "").Trim().ToUpper();
                 this.RaisePropertyChanged("VIN");
             }
         }
