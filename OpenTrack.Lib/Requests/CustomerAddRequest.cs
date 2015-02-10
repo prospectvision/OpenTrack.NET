@@ -57,6 +57,8 @@ namespace OpenTrack.Requests
 
     public class Customer
     {
+        public String CustomerNumber { get; set; }
+        
         public String TypeCode { get; set; }
 
         public String LastName { get; set; }
