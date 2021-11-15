@@ -244,8 +244,8 @@ namespace OpenTrack
         /// </remarks>
         internal virtual T SubmitRequest<T>(IRequest<T> request)
         {
-            // <soap:Envelope>
-            //            <soap:Header>
+            // <soap12:Envelope>
+            //            <soap12:Header>
             //                <wsse:Security>
             //                    <wsse:UsernameToken>
             //                        <wsse:Username>${USERNAME}</wsse:Username>
@@ -255,8 +255,8 @@ namespace OpenTrack
             //                <tran:PayloadManifest>
             //                    <tran:manifest contentID="Content0" namespaceURI="CrownDMSInterop" element="1" relatedID="1" version="1.0"/>
             //                </tran:PayloadManifest>
-            //            </soap:Header>
-            //            <soap:Body>
+            //            </soap12:Header>
+            //            <soap12:Body>
             //                <tran:ProcessMessage>
             //                    <tran:payload>
             //                        <tran:content id="Content0">
@@ -264,8 +264,8 @@ namespace OpenTrack
             //                        </tran:content>
             //               </tran:payload>
             //        </tran:ProcessMessage>
-            //    </soap:Body>
-            // </soap:Envelope>
+            //    </soap12:Body>
+            // </soap12:Envelope>
 
             using (var svc = GetStarService())
             {
